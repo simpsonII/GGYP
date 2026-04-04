@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경기도청 청소년 정책 제안 현황</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        /* 프로그레스 바 애니메이션용 */
+        .progress-bar {
+            width: 0;
+            transition: width 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-800 font-sans selection:bg-indigo-100">
+
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white shadow-md sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+            <h1 class="text-2xl sm:text-3xl font-bold flex items-center gap-2">
+                <span role="img" aria-label="wave">💡</span> 경기도청 청소년 정책 제안
+            </h1>
+            <p class="mt-2 text-indigo-100 text-sm sm:text-base">
+                우리가 만드는 변화, 1차 현황 공유 페이지
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        
+        <!-- Navigation Tabs -->
+        <div class="flex space-x-2 mb-8 bg-white p-1 rounded-xl shadow-sm border border-gray-100">
+            <button id="tab-brainstorming" onclick="switchTab('brainstorming')" class="flex-1 py-3 px-4 rounded-lg font-medium text-sm sm:text-base transition-colors flex items-center justify-center gap-2 bg-indigo-100 text-indigo-700">
+                <i data-lucide="users" class="w-[18px] h-[18px]"></i>
+                1차 선정 주제
+            </button>
+            <button id="tab-criteria" onclick="switchTab('criteria')" class="flex-1 py-3 px-4 rounded-lg font-medium text-sm sm:text-base transition-colors flex items-center justify-center gap-2 text-gray-500 hover:bg-gray-50">
+                <i data-lucide="target" class="w-[18px] h-[18px]"></i>
+                평가지표
+            </button>
+        </div>
+
+        <!-- Tab 1: Brainstorming Results -->
+        <section id="sec-brainstorming" class="animate-fade-in block">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-gray-900">📊 브레인스토밍 결과 (3표 이상 득표)</h2>
+                <p class="text-gray-500 mt-1 text-sm">학생들이 직접 선정한 1차 후보 주제들입니다.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-4 sm:p-6 space-y-6">
+                    
+                    <!-- Item 1 -->
+                    <div class="relative">
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800">
+                                <span class="text-indigo-500"><i data-lucide="bus" class="w-5 h-5"></i></span>
+                                비올때 버스 혼잡으로 인한 낙상사고
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">5표</div>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-3">
+                            <div class="bg-indigo-500 h-3 rounded-full progress-bar" data-width="100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative">
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800">
+                                <span class="text-indigo-500"><i data-lucide="shield-check" class="w-5 h-5"></i></span>
+                                청소년 흡연 (담배) 문제
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">4표</div>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-3">
+                            <div class="bg-indigo-500 h-3 rounded-full progress-bar" data-width="80%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative">
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800">
+                                <span class="text-indigo-500"><i data-lucide="heart-pulse" class="w-5 h-5"></i></span>
+                                청소년 운동 습관 개선
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">4표</div>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-3">
+                            <div class="bg-indigo-500 h-3 rounded-full progress-bar" data-width="80%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="relative">
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800">
+                                <span class="text-indigo-500"><i data-lucide="smartphone" class="w-5 h-5"></i></span>
+                                SNS 성희롱이나 악플 방지
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">3표</div>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-3">
+                            <div class="bg-indigo-500 h-3 rounded-full progress-bar" data-width="60%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="relative">
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800">
+                                <span class="text-indigo-500"><i data-lucide="check-circle" class="w-5 h-5"></i></span>
+                                청소년 건강검진 지원
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">3표</div>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-3">
+                            <div class="bg-indigo-500 h-3 rounded-full progress-bar" data-width="60%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="relative">
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800">
+                                <span class="text-indigo-500"><i data-lucide="users" class="w-5 h-5"></i></span>
+                                이주배경 청소년 지원
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">3표</div>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-3">
+                            <div class="bg-indigo-500 h-3 rounded-full progress-bar" data-width="60%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="relative">
+                        <div class="flex justify-between items-end mb-2">
+                            <div class="flex items-center gap-2 text-sm sm:text-base font-semibold text-gray-800">
+                                <span class="text-indigo-500"><i data-lucide="lightbulb" class="w-5 h-5"></i></span>
+                                안전 귀가를 위한 가로등 확충
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">3표</div>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-3">
+                            <div class="bg-indigo-500 h-3 rounded-full progress-bar" data-width="60%"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-4 flex gap-3 text-blue-800">
+                <i data-lucide="lightbulb" class="shrink-0 mt-0.5 w-5 h-5"></i>
+                <p class="text-sm leading-relaxed">
+                    위 주제들 중 하나를 선택하여 아래의 <strong>[평가지표]</strong>에 맞춰 구체적인 정책 제안서로 발전시켜 봅시다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tab 2: Evaluation Criteria -->
+        <section id="sec-criteria" class="hidden">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-gray-900">📋 정책 제안 평가지표</h2>
+                <p class="text-gray-500 mt-1 text-sm">우리 아이디어가 실제 정책이 되기 위해 통과해야 할 5가지 기준입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                
+                <!-- Criteria 1 -->
+                <div class="rounded-2xl p-5 border border-blue-200 bg-blue-50 shadow-sm transition-transform hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-white p-2 rounded-xl shadow-sm text-blue-500">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">필요성 (시의성)</h3>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-4 space-y-2">
+                        <p class="text-sm font-medium text-gray-800">
+                            <span class="text-gray-500 text-xs block mb-1">주요 평가 내용</span>
+                            "왜 지금 이 문제가 경기도 청소년에게 중요한가?"
+                        </p>
+                        <div class="pt-2 border-t border-gray-200/60 flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-1 bg-white rounded text-gray-600 shadow-sm">비고</span>
+                            <span class="text-sm text-gray-600 font-semibold">문제의 심각성</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Criteria 2 -->
+                <div class="rounded-2xl p-5 border border-green-200 bg-green-50 shadow-sm transition-transform hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-white p-2 rounded-xl shadow-sm text-green-500">
+                            <i data-lucide="scale" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">실현 가능성</h3>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-4 space-y-2">
+                        <p class="text-sm font-medium text-gray-800">
+                            <span class="text-gray-500 text-xs block mb-1">주요 평가 내용</span>
+                            "경기도 예산과 조례로 실제 집행이 가능한가?"
+                        </p>
+                        <div class="pt-2 border-t border-gray-200/60 flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-1 bg-white rounded text-gray-600 shadow-sm">비고</span>
+                            <span class="text-sm text-gray-600 font-semibold">기술적/법적 검토</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Criteria 3 -->
+                <div class="rounded-2xl p-5 border border-yellow-200 bg-yellow-50 shadow-sm transition-transform hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-white p-2 rounded-xl shadow-sm text-yellow-500">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">창의성</h3>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-4 space-y-2">
+                        <p class="text-sm font-medium text-gray-800">
+                            <span class="text-gray-500 text-xs block mb-1">주요 평가 내용</span>
+                            "기존 정책과 차별화된 새로운 접근 방식인가?"
+                        </p>
+                        <div class="pt-2 border-t border-gray-200/60 flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-1 bg-white rounded text-gray-600 shadow-sm">비고</span>
+                            <span class="text-sm text-gray-600 font-semibold">아이디어의 참신함</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Criteria 4 -->
+                <div class="rounded-2xl p-5 border border-purple-200 bg-purple-50 shadow-sm transition-transform hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-white p-2 rounded-xl shadow-sm text-purple-500">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">기대 효과</h3>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-4 space-y-2">
+                        <p class="text-sm font-medium text-gray-800">
+                            <span class="text-gray-500 text-xs block mb-1">주요 평가 내용</span>
+                            "수혜 대상이 얼마나 넓고, 삶의 질이 얼마나 개선되는가?"
+                        </p>
+                        <div class="pt-2 border-t border-gray-200/60 flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-1 bg-white rounded text-gray-600 shadow-sm">비고</span>
+                            <span class="text-sm text-gray-600 font-semibold">가성비/파급력</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Criteria 5 -->
+                <div class="rounded-2xl p-5 border border-rose-200 bg-rose-50 shadow-sm transition-transform hover:-translate-y-1 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-white p-2 rounded-xl shadow-sm text-rose-500">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">구체성</h3>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-4 space-y-2">
+                        <p class="text-sm font-medium text-gray-800">
+                            <span class="text-gray-500 text-xs block mb-1">주요 평가 내용</span>
+                            "누가, 무엇을, 어떻게 할지가 명확하게 설계되었는가?"
+                        </p>
+                        <div class="pt-2 border-t border-gray-200/60 flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-1 bg-white rounded text-gray-600 shadow-sm">비고</span>
+                            <span class="text-sm text-gray-600 font-semibold">논리의 완결성</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Lucide 아이콘 렌더링
+        lucide.createIcons();
+
+        // 프로그레스 바 애니메이션 실행
+        setTimeout(() => {
+            document.querySelectorAll('.progress-bar').forEach(bar => {
+                bar.style.width = bar.getAttribute('data-width');
+            });
+        }, 100);
+
+        // 탭 전환 로직
+        function switchTab(tabId) {
+            const btnBrainstorming = document.getElementById('tab-brainstorming');
+            const btnCriteria = document.getElementById('tab-criteria');
+            const secBrainstorming = document.getElementById('sec-brainstorming');
+            const secCriteria = document.getElementById('sec-criteria');
+
+            // 스타일 초기화
+            const activeClasses = ['bg-indigo-100', 'text-indigo-700'];
+            const inactiveClasses = ['text-gray-500', 'hover:bg-gray-50'];
+
+            if (tabId === 'brainstorming') {
+                btnBrainstorming.classList.remove(...inactiveClasses);
+                btnBrainstorming.classList.add(...activeClasses);
+                
+                btnCriteria.classList.remove(...activeClasses);
+                btnCriteria.classList.add(...inactiveClasses);
+
+                secBrainstorming.classList.remove('hidden');
+                secBrainstorming.classList.add('animate-fade-in');
+                secCriteria.classList.add('hidden');
+                secCriteria.classList.remove('animate-fade-in');
+                
+                // 프로그레스 바 애니메이션 재실행
+                document.querySelectorAll('.progress-bar').forEach(bar => {
+                    bar.style.width = '0';
+                });
+                setTimeout(() => {
+                    document.querySelectorAll('.progress-bar').forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                }, 50);
+
+            } else {
+                btnCriteria.classList.remove(...inactiveClasses);
+                btnCriteria.classList.add(...activeClasses);
+                
+                btnBrainstorming.classList.remove(...activeClasses);
+                btnBrainstorming.classList.add(...inactiveClasses);
+
+                secCriteria.classList.remove('hidden');
+                secCriteria.classList.add('animate-fade-in');
+                secBrainstorming.classList.add('hidden');
+                secBrainstorming.classList.remove('animate-fade-in');
+            }
+        }
+    </script>
+</body>
+</html>
